@@ -18,8 +18,8 @@ function checkCashRegister(price, cash, cid) {
     let totalRegisterCash = 0;
     let change = cash - price;
 
-	for (const money of cid) {
-        totalRegisterCash += money[1];  
+	for (const [key, value] of cid) {
+        totalRegisterCash += value;  
     }
 
     if (totalRegisterCash < change) return { status: "INSUFFICIENT_FUNDS", change: [] };
@@ -34,7 +34,7 @@ function checkCashRegister(price, cash, cid) {
 		while (change >= MONEY_UNITS[key] && value > 0) {
 			temp += MONEY_UNITS[key];
 			value -= MONEY_UNITS[key];
-            change = Math.round((change - MONEY_UNITS[key]) * 100) / 100;
+            change = Math.round( (change - MONEY_UNITS[key]) * 100) / 100;
 		}
 		if (temp > 0) {
 			totalChange.push([key, temp]);
