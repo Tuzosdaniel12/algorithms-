@@ -114,4 +114,4 @@ email, or any other form of contact at my portfolio
 <br>
 -GitHub Username: [tuzosdaniel12](https://github.com/tuzosdaniel12) 
 <br>
--Portfolio: [daniel-soledad.dev](https://daniel-soledad.dev)
+-Portfolio: [daniel-soledad.dev](https://www.daniel-soledad.dev/)
