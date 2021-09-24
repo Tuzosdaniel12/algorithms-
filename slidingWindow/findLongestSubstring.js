@@ -15,10 +15,7 @@ const findLongestSubstring = (str) => {
 		} else {
 			substring = {};
 			endOfStr++;
-			tempSubstring =
-				longestSubstring > tempSubstring
-					? longestSubstring
-					: tempSubstring;
+			tempSubstring = longestSubstring 
 			longestSubstring = 0;
 			startOfStr = endOfStr;
 		}
