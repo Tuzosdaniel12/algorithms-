@@ -1,6 +1,6 @@
-var collectOddValues = function (arr) {
-    var result = [];
-    var helper = function (helperInput) {
+const collectOddValues = (arr) => {
+    let result = [];
+    const helper = (helperInput) => {
         if (helperInput.length === 0) {
             return;
         }
@@ -13,8 +13,8 @@ var collectOddValues = function (arr) {
     return result;
 };
 console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
-var collectOddValuesPure = function (arr) {
-    var result = [];
+const collectOddValuesPure = (arr) => {
+    let result = [];
     if (arr.length === 0) {
         return result;
     }
@@ -25,3 +25,4 @@ var collectOddValuesPure = function (arr) {
     return result;
 };
 console.log(collectOddValuesPure([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+//# sourceMappingURL=oddNumbers.js.map

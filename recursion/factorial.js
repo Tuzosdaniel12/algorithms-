@@ -1,4 +1,4 @@
-var factorial = function (num) {
+const factorial = (num) => {
     if (num === 1) {
         return 1;
     }
@@ -7,3 +7,4 @@ var factorial = function (num) {
 console.log(factorial(10));
 console.log(factorial(4));
 console.log(factorial(7));
+//# sourceMappingURL=factorial.js.map

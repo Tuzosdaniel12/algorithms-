@@ -1,4 +1,4 @@
-var fib = function (num) {
+const fib = (num) => {
     if (num <= 2) {
         return 1;
     }
@@ -8,3 +8,4 @@ console.log(fib(4));
 console.log(fib(10));
 console.log(fib(28));
 console.log(fib(35));
+//# sourceMappingURL=fib.js.map
