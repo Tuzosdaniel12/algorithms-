@@ -10,7 +10,7 @@ const nestedEvenSum = (obj) => {
             totalSum += nestedEvenSum(obj[key]);
         }
     }
-    return totalSum;
+    return  totalSum;
 };
 const obj1 = {
     outer: 2,
