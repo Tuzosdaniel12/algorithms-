@@ -3,6 +3,7 @@ const collectStrings = (obj) => {
     let tempArr = [];
     const arrayOfKeys = Object.keys(tempObj);
     for (const key of arrayOfKeys) {
+        console.log(typeof tempObj[key]);
         if (typeof tempObj[key] === "string") {
             tempArr = tempArr.concat([tempObj[key]]);
         }
