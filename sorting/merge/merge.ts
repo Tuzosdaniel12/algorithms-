@@ -4,7 +4,6 @@ const mergeArray = (arr: Array<number>, arr2: Array<number>): Array<number>=>{
     let j:number = 0;
     
     while(i < arr.length && j < arr2.length){
-        console.log(i, j)
         if(arr[i] < arr2[j]){
             mergeArr.push( arr[i] )
             i++
@@ -24,4 +23,14 @@ const mergeArray = (arr: Array<number>, arr2: Array<number>): Array<number>=>{
     return mergeArr;
 }
 
-console.log(mergeArray([4,8,25,96], [5,6,7,9]))
+
+const mergeSort = (arr:Array<number>):Array<number> =>{
+    if(arr.length === 1) return arr;
+    let middle = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0,middle)); 
+    let right = mergeSort(arr.splice(middle));
+    return mergeArray(left, right)
+}
+
+
+console.log(mergeSort([25,96, 4,8, 8,9,6,45,10]))
