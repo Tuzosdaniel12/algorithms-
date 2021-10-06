@@ -30,8 +30,6 @@ function search(array, val) {
 
 	while (min <= max) {
 		let middle = Math.floor((min + max) / 2);
-		let currentElement = array[middle];
-
 		if (array[middle] < val) {
 			min = middle + 1;
 		} else if (array[middle] > val) {
