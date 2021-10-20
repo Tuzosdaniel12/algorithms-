@@ -18,12 +18,13 @@ class SinglyLinkedList{
         const newNode = new Node(val)
         //check if head is empty
         !this.head 
-            ?
-                (this.head = newNode,
-                this.tail = this.head)
-            :
-                (this.tail.next = newNode,
-                this.tail = newNode)
+            ?(
+                this.head = newNode,
+                this.tail = this.head
+            ):(
+                this.tail.next = newNode,
+                this.tail = newNode
+            )
 
         this.length++;
         return this;
@@ -56,6 +57,20 @@ class SinglyLinkedList{
 		}
         return head;
     }
+    unshift(val){
+        const newHead = new Node(val);
+        !this.head 
+            ?(
+                this.head = newHead,
+                this.tail = this.head   
+            ):(   
+                newHead.next = this.head,
+                this.head = newHead 
+            )
+        
+        this.length++;
+        return this;
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -70,8 +85,7 @@ list.push(4);
 // console.log(list.pop());
 
 
-console.log(list.shift());
-console.log(list.shift());
-console.log(list.shift());
-console.log(list.shift());
+// console.log(list.shift());
+list.unshift(0)
+
 console.log(list)
