@@ -29,9 +29,7 @@ var convert = function(str, numRows) {
 				y = 0;
 				x++;
 			}
-            if (x >= rows) {
-				x = 0;
-			}
+            if (x >= rows) x = 0;
     }
     return arr.reduce((previousValue, currentValue) => previousValue.concat(currentValue), []).join("");
 };

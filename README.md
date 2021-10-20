@@ -174,14 +174,16 @@ charCount(""Your PIN number is 1234!);
     ```
     function charCount(str){
         let countOfChars = {};
-        for( let char pf str){
+        for( let char of str){
             char = char.toLowerCase();
             if(/[a-z0-9]/.test(char)){
-                countOfChars[char] = countOfChars[char]++ || 1;
+                countOfChars[char] = countOfChars[char] + 1 || 1;
             }
         }
         return countOfChars;
     }
+
+    
     ```
 ## Questions
 email, or any other form of contact at my portfolio
