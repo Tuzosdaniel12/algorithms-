@@ -1,5 +1,9 @@
 //piece of data - value of
-
+//BIG O of SinglyLinkedList
+    //insertion - O(1)
+    //removal - it depends O(1) or O(n)
+    //searching - O(n)
+    //Access - O(n)
 class Node {
 	constructor(val) {
 		this.val = val;
@@ -103,25 +107,28 @@ class SinglyLinkedList {
         const remove = prev.next
 		prev.next = remove.next
 		this.length--;
-        
+
 		return remove;
+    }
+    reverse(){
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+        let prev = null;
+        let next;
+
+    for (let index = 0; index < this.length; index++) {
+        next = node.next;
+        node.next = prev; 
+        prev = node;
+        node = next;  
+    }
+
+        
+    return this
     }
 }
 
 const list = new SinglyLinkedList();
 
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(5);
-
-// console.log(list.pop())
-// console.log(list.pop());
-// console.log(list.pop());
-// console.log(list.shift());
-
-console.log(list.insert(3, 4));
-
-console.log(list.get(-1));
-
-console.log(list);
