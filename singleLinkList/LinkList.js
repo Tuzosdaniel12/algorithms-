@@ -82,6 +82,14 @@ class SinglyLinkedList{
 		}
         return current.next;
     }
+    set(index, val){
+        let updateNode = this.get(index);
+        if (updateNode) {
+            updateNode.val = val;
+            return true;
+        } 
+        return false;
+    }
 }
 
 const list = new SinglyLinkedList();
