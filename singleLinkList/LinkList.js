@@ -29,6 +29,7 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    //takes last item of node list
     pop(){
         if(!this.head ) return undefined;
         let current = this.head;
@@ -71,6 +72,16 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    get(index){
+        if(index < 0 || index >= this.length)return null
+        let counter = 0;
+        current = this.head;
+        while (counter !== index) {
+			current = current.next;
+			counter++;
+		}
+        return current.next;
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -83,9 +94,8 @@ list.push(4);
 // console.log(list.pop())
 // console.log(list.pop());
 // console.log(list.pop());
-
-
 // console.log(list.shift());
+
 list.unshift(0)
 
 console.log(list)
