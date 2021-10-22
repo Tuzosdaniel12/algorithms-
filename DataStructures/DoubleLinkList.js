@@ -14,7 +14,6 @@ class DoublylinkedList{
     }
     push(val){
         const newTail = new Node(val);
-
         if(!this.head){
             this.head = newTail;
             this.tail = newTail;
@@ -27,8 +26,8 @@ class DoublylinkedList{
         return this
     }
     pop(){
-        const removeNode = this.tail;
         if(!this.head) return undefined;
+        const removeNode = this.tail;
         if(this.length === 1){
             this.head = null;
             this.tail = null;
@@ -40,6 +39,33 @@ class DoublylinkedList{
         this.length--;
         return removeNode;
     }
+    shift(){
+        if (!this.head) return undefined;
+        const removeHead = this.head;
+        if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.head = removeHead.next;
+			this.head.prev = null;
+			removeHead.next = null;
+		}
+		this.length--;
+		return removeHead;
+    }
+    unshift(val){
+        const newNode = new Node(val);
+        if (!this.head) {
+			this.head = newTail;
+			this.tail = newTail;
+		} else {
+			this.head.prev = newNode;
+			newNode.next = this.head;
+			this.head = newNode;
+		}
+        this.length++;
+        return this;
+    }
 }
 
 const DoubleList = new DoublylinkedList();
@@ -49,5 +75,4 @@ DoubleList.push(2);
 DoubleList.push(3);
 DoubleList.push(4);
 
-console.log(DoubleList.pop())
 console.log(DoubleList)
