@@ -5,18 +5,20 @@
 
 const isAnagram = (string1, string2) => {
 
+    if (string1.length !== string2.length) return false;
+
     const frequencyStringOne = {};
     const frequencyStringTwo = {};
+
     countKeysInString(string1, frequencyStringOne)
     countKeysInString(string2, frequencyStringTwo);
+
     for (const key in frequencyStringOne) {
-		if (!frequencyStringTwo[key]) {
-			return false;
-		}
-        if (frequencyStringTwo[key] !== frequencyStringOne[key]) {
-			return false;
-		}
+		if (!frequencyStringTwo[key]) return false;
+
+        if (frequencyStringTwo[key] !== frequencyStringOne[key]) return false;
 	} 
+    
     return true;
 }
 
@@ -28,7 +30,7 @@ const countKeysInString = (string, frequencyString) => {
 };
 
 console.log(isAnagram(" ", " ")); // true
-console.log(isAnagram("aaz", "zza")); // false
+console.log(isAnagram("az", "azb")); // false
 console.log(isAnagram("anagram", "nagaram")); // true
 console.log(isAnagram("rat", "car")); // false) // false
 console.log(isAnagram("awesome", "awesom")); // false

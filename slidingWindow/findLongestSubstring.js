@@ -6,21 +6,20 @@ const findLongestSubstring = (str) => {
     let longestSubstring = 0;
     let tempSubstring = 0
 
-    while (startOfStr < str.length) {
-
-		if (!substring[str[startOfStr]]) {
-			substring[str[startOfStr]] = 1;
-			longestSubstring++;
-			startOfStr++;
+    while (endOfStr < str.length) {
+		if (!substring[str[endOfStr]]) {
+			substring[str[endOfStr]] = 1;
+			tempSubstring++;
+			endOfStr++;
 		} else {
 			substring = {};
-			endOfStr++;
-			tempSubstring = longestSubstring 
-			longestSubstring = 0;
-			startOfStr = endOfStr;
+			startOfStr++;
+			longestSubstring = longestSubstring > tempSubstring ? longestSubstring : tempSubstring;
+			tempSubstring = 0;
+			endOfStr = startOfStr;
 		}
 	}
-    return longestSubstring > tempSubstring ? longestSubstring : tempSubstring;
+    return longestSubstring;
 }
 
-console.log(findLongestSubstring("anviaj"));
+console.log(findLongestSubstring("anviajbatfeupyel"));

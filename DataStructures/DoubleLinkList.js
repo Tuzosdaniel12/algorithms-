@@ -77,8 +77,47 @@ class DoublylinkedList{
             current = isStart ? current.next : current.prev;
             count = isStart ? count + 1 : count - 1;
         }
-        console.log(current);
         return current;
+    }
+    set(index, val){
+        const found = this.get(index);
+        if(found != null){
+            found.val = val;
+            return true
+        }
+        return false
+    }
+    insert(index, val){
+        if(index < 0 || index >= this.length) return false
+        if(index === 0) return !!this.unshift(val);
+        if(index === this.length) return !!this.push(val);
+
+        const current = new Node(val);
+        const prev = this.get(index - 1);
+        const next = prev.next;
+
+        prev.next = current;
+        current.prev = prev;
+        current.next = next;
+        next.prev = current;
+        this.length++;
+        return true
+    }
+    remove(index){
+        if (index < 0 || index >= this.length) return false;
+		if (index === 0) return !!this.shift();
+		if (index === this.length) return !!this.pop();
+
+        const removeNode = this.get(index);
+
+        removeNode.prev.next = removeNode.next;
+        removeNode.next.prev = removeNode.prev;
+
+        removeNode.prev = null;
+        removeNode.next = null;
+        
+        this.length--;
+        return removeNode;
     }
 }
 
