@@ -5,6 +5,12 @@ class Node {
 	}
 }
 
+//BIG O of Stack - LIFO
+//insertion - O(1)
+//removal - O(1)
+//searching - O(n)
+//Access - O(n)
+
 class Stack {
 	constructor() {
 		this.first = null;
@@ -28,33 +34,14 @@ class Stack {
     pop(){
         if (!this.first) return null;
 		const removeNode = this.first;
-        if (this.first === this.last) {
-			this.last = null;
-		}
+        
+        if (this.first === this.last) this.last = null;
 
 		this.first = removeNode.next;
-        removeNode.next = null;
 		
 		this.size--;
 		return removeNode.val;
     }
 }
 
-
-const stack = new Stack()
-
-stack.push(1)
-stack.push(2);
-stack.push(3);
-stack.push(1);
-
-console.log(stack.pop());
-console.log(stack);
-console.log(stack.pop());
-console.log(stack);
-console.log(stack.pop());
-console.log(stack);
-console.log(stack.pop());
-console.log(stack);
-
-console.log(stack)
+module.exports = new Stack();
