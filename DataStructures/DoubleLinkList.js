@@ -106,7 +106,7 @@ class DoublylinkedList{
     remove(index){
         if (index < 0 || index >= this.length) return false;
 		if (index === 0) return !!this.shift();
-		if (index === this.length) return !!this.pop();
+		if (index === this.length - 1) return !!this.pop();
 
         const removeNode = this.get(index);
 
