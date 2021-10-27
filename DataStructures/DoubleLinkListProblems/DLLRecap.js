@@ -98,7 +98,7 @@ class DoublyLinkedList {
         removeNode.next.prev = removeNode.prev;
 
         removeNode.prev = null;
-        removeNode.next = null;
+        removeNode.next = null ;
         
         this.length--;
         return removeNode;
