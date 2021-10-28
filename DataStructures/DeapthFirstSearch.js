@@ -66,7 +66,7 @@ class Tree {
 
 		return data;
 	}
-	DepthFirstSearchPostOrder(){
+	DepthFirstSearchPostOrder() {
 		//pre orders
 		const data = [];
 		//const queue = require("./Queues.js");
@@ -80,7 +80,23 @@ class Tree {
 		postOrder(current);
 
 		return data;
-	};
+	}
+	DepthFirstSearchInOrder(){
+		//pre orders
+		const data = [];
+		//const queue = require("./Queues.js");
+		let current = this.root;
+
+		const inOrder = (node) => {
+			if (node.left) inOrder(node.left);
+            data.push(node.val);
+			if (node.right) inOrder(node.right);
+			
+		};
+		inOrder(current);
+
+		return data;
+	}
 }
 
 const tree = new Tree();
@@ -105,4 +121,5 @@ console.log(tree.DepthFirstSearchPreOrder());//40,11,8,9,12,30,41,50,60,72
 
 console.log(tree.DepthFirstSearchPostOrder());//9,8,30,12,11,72,60,50,41,40
 
+console.log(tree.DepthFirstSearchInOrder());//8,9,11,12,30,40,41,50,60,72
 //console.log(tree);
